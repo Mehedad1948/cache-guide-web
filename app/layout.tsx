@@ -1,17 +1,22 @@
-
 import { Montserrat } from "next/font/google";
-import { Providers } from './providers';
+import { Providers } from "./providers";
 
-const inter = Montserrat({ weight: ['400', '500', '600', '700'], subsets: ['latin'] },);
+const montserrat = Montserrat({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-montserrat", // This is the CSS var Tailwind will use
+});
 
-const RootLayout = async ({ children, }: Readonly<{ children: React.ReactNode, }>) => {
-
+const RootLayout = async ({
+  children,
+}: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <html lang="en">
-
-      <body className={`${inter.className} body dark h-full`}>
+    <html lang="en" className="dark"> {/* default dark mode */}
+      <body className={`${montserrat.className} h-full`}>
         <Providers>
-          {children}
+          <main className="text-foreground bg-background font-montserrat">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
