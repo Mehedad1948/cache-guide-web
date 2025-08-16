@@ -4,9 +4,10 @@ import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/components/ui/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
+import Sidebar from '@/components/ui/Sidebar';
 
 export const metadata: Metadata = {
   title: {
@@ -43,11 +44,16 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
             <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
+            <div className='grid container grid-cols-[300px_1fr] h-full mx-auto max-w-7xl pt-16 px-6'>
+              <div className=' w-full h-full'>
+                <Sidebar />
+              </div>
+              <main className="bg-gradient-to-bl h-full w-full ">
+                {children}
+              </main>
+            </div>
             <footer className="w-full flex items-center justify-center py-3">
-             
+
             </footer>
           </div>
         </Providers>
