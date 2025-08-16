@@ -16,8 +16,6 @@ export default async function page() {
     }
 
     return (
-        <div>
-            <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
-        </div>
+        <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
     );
 }

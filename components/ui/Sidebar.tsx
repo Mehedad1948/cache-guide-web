@@ -5,12 +5,15 @@ import Link from 'next/link';
 
 export default function Sidebar() {
     return (
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-4'>
             <Link href="/static">
                 Static Page
             </Link>
             <Link href="/server-side-rendered">
                 Server Side Rendered (SSR)
+            </Link>
+            <Link href="/stream-with-suspense">
+                Stream with Suspense
             </Link>
         </div>
     );
