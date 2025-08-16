@@ -1,17 +1,12 @@
-// app/providers.tsx
 "use client";
+import { ThemeProviderProps } from 'next-themes';
+import dynamic from "next/dynamic";
 
-import { HeroUIProvider } from "@heroui/react";
-import { useRouter } from "next/navigation";
+const HeroUIWrapper = dynamic(
+  () => import("./HeroUIClientWrapper"),
+  { ssr: false } // client-side only
+);
 
-// Only if using TypeScript
-declare module "@react-types/shared" {
-  interface RouterConfig {
-    routerOptions: NonNullable<Parameters<ReturnType<typeof useRouter>["push"]>[1]>;
-  }
-}
-
-export function Providers({ children }: { children: React.ReactNode }) {
-
-  return <HeroUIProvider >{children}</HeroUIProvider>;
+export function Providers({ children, themeProps }: { children: React.ReactNode, themeProps?: ThemeProviderProps }) {
+  return <HeroUIWrapper themeProps={themeProps}>{children}</HeroUIWrapper>;
 }
