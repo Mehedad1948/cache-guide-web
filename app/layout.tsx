@@ -6,8 +6,6 @@ import { Metadata, Viewport } from "next";
 import Sidebar from '@/components/ui/Sidebar';
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
-import { Providers } from './providers';
-import { Navbar } from '@heroui/navbar';
 
 export const metadata: Metadata = {
   title: {
@@ -41,22 +39,19 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <div className='grid container grid-cols-[300px_1fr] h-full mx-auto max-w-7xl pt-16 px-6'>
-              <div className=' w-full h-full'>
-                <Sidebar />
-              </div>
-              <main className="bg-gradient-to-bl h-full w-full ">
-                {children}
-              </main>
+        <div className="relative flex flex-col h-screen">
+          <div className='grid container grid-cols-[300px_1fr] h-full mx-auto max-w-7xl pt-16 px-6'>
+            <div className=' w-full h-full'>
+              <Sidebar />
             </div>
-            <footer className="w-full flex items-center justify-center py-3">
-
-            </footer>
+            <main className="bg-gradient-to-bl h-full w-full ">
+              {children}
+            </main>
           </div>
-        </Providers>
+          <footer className="w-full flex items-center justify-center py-3">
+
+          </footer>
+        </div>
       </body>
     </html>
   );

@@ -27,11 +27,10 @@ export default function ClientShwTime({ dataTime, renderTime }: Props) {
         if (diff < oneDay) {
             const hours = Math.floor(diff / (1000 * 60 * 60));
             const minutes = Math.floor((diff / (1000 * 60)) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
 
             return `${hours.toString().padStart(2, '0')}:${minutes
                 .toString()
-                .padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ago`;
+                .padStart(2, '0')} ago`;
         }
 
         const days = Math.floor(diff / oneDay);
