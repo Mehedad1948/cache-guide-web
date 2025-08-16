@@ -6,6 +6,7 @@ import { Metadata, Viewport } from "next";
 import Sidebar from '@/components/ui/Sidebar';
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: {
@@ -39,7 +40,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        {/* <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}> */}
+        {/* <Providers > */}
           <div className="relative flex flex-col h-screen">
             {/* <Navbar /> */}
             <div className='grid container grid-cols-[300px_1fr] h-full mx-auto max-w-7xl pt-16 px-6'>
@@ -47,7 +48,7 @@ export default function RootLayout({
                 {/* <Sidebar /> */}
               </div>
               <main className="bg-gradient-to-bl h-full w-full ">
-                {/* {children} */}
+                {children}
               </main>
             </div>
             <footer className="w-full flex items-center justify-center py-3">

@@ -1,5 +1,6 @@
 {
   "name": "next-app-template",
+  "type": "module",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -16,6 +17,7 @@
     "@heroui/link": "2.2.21",
     "@heroui/listbox": "2.3.23",
     "@heroui/navbar": "2.2.22",
+    "@heroui/react": "^2.8.2",
     "@heroui/snippet": "2.2.25",
     "@heroui/switch": "2.2.22",
     "@heroui/system": "2.4.20",
@@ -34,12 +36,13 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "15.3.4",
     "@react-types/shared": "3.30.0",
-    "@tailwindcss/postcss": "4.1.11",
+    "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "20.5.7",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "8.34.1",
     "@typescript-eslint/parser": "8.34.1",
+    "autoprefixer": "^10.4.21",
     "eslint": "9.25.1",
     "eslint-config-next": "15.3.4",
     "eslint-config-prettier": "9.1.0",
@@ -51,10 +54,10 @@
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-unused-imports": "4.1.4",
     "globals": "16.0.0",
-    "postcss": "8.5.6",
+    "postcss": "^8.5.6",
     "prettier": "3.5.3",
     "tailwind-variants": "2.0.1",
-    "tailwindcss": "4.1.11",
+    "tailwindcss": "^4.1.11",
     "typescript": "5.6.3"
   }
 }
