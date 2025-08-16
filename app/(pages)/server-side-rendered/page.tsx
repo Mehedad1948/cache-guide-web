@@ -1,5 +1,4 @@
 import ClientShwTime from '@/components/ClientShwoTime';
-import { differenceInSeconds, format } from 'date-fns';
 
 export default async function page() {
     let time
@@ -17,6 +16,8 @@ export default async function page() {
     }
 
     return (
-        <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
+        <div>
+            <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
+        </div>
     );
 }
