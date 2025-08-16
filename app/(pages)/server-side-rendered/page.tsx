@@ -17,8 +17,6 @@ export default async function page() {
     }
 
     return (
-        <div className='h-full'>
-            <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
-        </div>
+        <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
     );
 }
