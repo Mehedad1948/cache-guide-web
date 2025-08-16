@@ -1,4 +1,5 @@
 import ClientShwTime from '../../../components/ClientShwoTime';
+const renderTime = Date.now();
 
 export default async function page() {
     let time
@@ -16,6 +17,6 @@ export default async function page() {
     }
 
     return (
-        <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
+        <ClientShwTime dataTime={time?.timestamp} renderTime={renderTime} />
     );
 }
