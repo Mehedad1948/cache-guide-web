@@ -18,6 +18,9 @@ export default function Sidebar() {
             <Link href="/stream-with-parallel-route">
                 Stream with Parallel Route
             </Link>
+            <Link href="/nested-server-components">
+                Nested Server Components
+            </Link>
         </div>
     );
 }

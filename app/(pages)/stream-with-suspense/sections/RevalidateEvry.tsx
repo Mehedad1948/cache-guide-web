@@ -1,6 +1,8 @@
 import ClientShwTime from '@/components/ClientShwoTime';
+import { ReactNode } from 'react';
 
-export default async function RevalidateEvery({ revalidate }: { revalidate: number }) {
+export default async function RevalidateEvery({ revalidate, children }:
+    { revalidate: number, children?: ReactNode }) {
     let time
     try {
 
@@ -16,9 +18,11 @@ export default async function RevalidateEvery({ revalidate }: { revalidate: numb
     }
 
     return (
-        <div className='rounded-3xl border p-6 bg-white'>
+        <div className='rounded-3xl flex flex-col gap-4 border p-6 bg-white'>
             <h2>This section is being revalidated every {revalidate} minutes</h2>
             <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
+
+            {children}
         </div>
     );
 }

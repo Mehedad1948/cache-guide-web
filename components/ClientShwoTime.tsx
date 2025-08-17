@@ -51,7 +51,7 @@ export default function ClientShwTime({ dataTime, renderTime }: Props) {
                     {formatDiff(now - dataTime)}
                 </span>
             </div>}
-            {
+            {/* {
                 renderTime && <div className='flex flex-col gap-4 items-center'>
                     <span className='text-2xl font-medium'>
                         Page was rendered:
@@ -60,7 +60,7 @@ export default function ClientShwTime({ dataTime, renderTime }: Props) {
                         {formatDiff(now - renderTime)}
                     </span>
                 </div>
-            }
+            } */}
         </div >
     );
 }
