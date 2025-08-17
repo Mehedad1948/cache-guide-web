@@ -4,14 +4,14 @@ import Static from './sections/static';
 import RevalidateEvery from './sections/RevalidateEvry';
 
 
-
+export const revalidate = 60 * 30
 
 export default async function page() {
 
     return (
         <div className='flex flex-col gap-6'>
             <div className='bg-cyan-50 font-medium text-base text-cyan-700 rounded-xl p-4'>
-                export const revalidate = 60 * 3
+                export const revalidate = 60 * 30
             </div>
             <Suspense>
                 <Static />
