@@ -10,9 +10,9 @@ export default async function page() {
             <Suspense>
                 <Static />
             </Suspense>
-            <Suspense>
+            {/* <Suspense>
                 <RevalidateEvery revalidate={1} />
-            </Suspense>
+            </Suspense> */}
         </div>
     );
 }
