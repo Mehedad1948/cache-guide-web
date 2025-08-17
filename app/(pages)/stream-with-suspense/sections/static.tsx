@@ -5,6 +5,7 @@ export default async function Static() {
     try {
 
         const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/time`, {
+            next: { tags: ['static'] }
         });
 
         time = await res.json();
