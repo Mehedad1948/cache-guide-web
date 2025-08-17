@@ -21,6 +21,9 @@ export default function Sidebar() {
             <Link href="/nested-server-components">
                 Nested Server Components
             </Link>
+            <Link href="/revalidate-on-demand">
+                Revalidate on Demand
+            </Link>
         </div>
     );
 }
