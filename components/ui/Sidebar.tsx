@@ -15,6 +15,9 @@ export default function Sidebar() {
             <Link href="/stream-with-suspense">
                 Stream with Suspense
             </Link>
+            <Link href="/stream-with-parallel-route">
+                Stream with Parallel Route
+            </Link>
         </div>
     );
 }
