@@ -2,12 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-type Props = {
-    dataTime?: number;
-    renderTime?: number;
-};
-
-export default function ClientShwTime({ dataTime, renderTime }: Props) {
+export default function TimeShowWrapper({ timestamp, children }: { timestamp: number, children: (timer: string) => React.ReactNode }) {
     const [now, setNow] = useState(Date.now());
 
     // One interval for both counters
@@ -40,27 +35,5 @@ export default function ClientShwTime({ dataTime, renderTime }: Props) {
             } ago`;
     };
 
-    return (
-        <div className='flex items-center font-semibold flex-col justify-around h-full text-3xl gap-12'>
-            {dataTime && <div className='flex flex-col gap-4 items-center'>
-                <span className='text-2xl font-medium'>
-
-                    Data was fetched:
-                </span>
-                <span>
-                    {formatDiff(now - dataTime)}
-                </span>
-            </div>}
-            {
-                renderTime && <div className='flex flex-col gap-4 items-center'>
-                    <span className='text-2xl font-medium'>
-                        Page was rendered:
-                    </span>
-                    <span>
-                        {formatDiff(now - renderTime)}
-                    </span>
-                </div>
-            }
-        </div >
-    );
+    return children(formatDiff(now - timestamp));
 }

@@ -6,6 +6,9 @@ import { Metadata, Viewport } from "next";
 import Sidebar from '@/components/ui/Sidebar';
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
+import ClientShwTime from '@/components/ClientShwoTime';
+import TimeShowWrapper from '@/components/TimeShowWrapper';
+import Footer from '@/components/ui/Footer';
 
 export const metadata: Metadata = {
   title: {
@@ -24,6 +27,8 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
 };
+
+const renderTime = Date.now();
 
 export default function RootLayout({
   children,
@@ -48,9 +53,7 @@ export default function RootLayout({
               {children}
             </main>
           </div>
-          <footer className="w-full flex items-center justify-center py-3">
-
-          </footer>
+          <Footer renderTime={renderTime} />
         </div>
       </body>
     </html>
