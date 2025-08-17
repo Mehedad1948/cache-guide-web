@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 type Props = {
     dataTime: number;
-    renderTime: number;
+    renderTime?: number;
 };
 
 export default function ClientShwTime({ dataTime, renderTime }: Props) {
@@ -51,14 +51,14 @@ export default function ClientShwTime({ dataTime, renderTime }: Props) {
                     {formatDiff(now - dataTime)}
                 </span>
             </div>
-            <div className='flex flex-col gap-4 items-center'>
+            {renderTime && <div className='flex flex-col gap-4 items-center'>
                 <span className='text-2xl font-medium'>
                     Page was rendered:
                 </span>
                 <span>
                     {formatDiff(now - renderTime)}
                 </span>
-            </div>
+            </div>}
         </div >
     );
 }

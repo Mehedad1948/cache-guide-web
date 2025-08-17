@@ -15,7 +15,7 @@ export default async function Static() {
     return (
         <div className='rounded-3xl border p-6'>
             <h2>This section has a fetch with no validate time set</h2>
-        <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
+            <ClientShwTime dataTime={time?.timestamp} />
         </div>
     );
 }
