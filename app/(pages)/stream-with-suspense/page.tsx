@@ -21,7 +21,7 @@ export default async function page() {
                 revalidation of page as the minimum revalidation used in the page
             </div>
             <Suspense>
-                <RevalidateEvery revalidate={1} />
+                <RevalidateEvery revalidate={5} />
             </Suspense>
         </div>
     );
