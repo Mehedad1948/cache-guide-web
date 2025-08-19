@@ -20,7 +20,7 @@ export default function Page({ params }: { params: { id: string } }) {
             </NoteBox>
             <NoteBox >
                 <div className='flex items-center gap-4 flex-wrap'>
-                    <p className=''>Checkout a fresh id page</p>
+                    <p className=''>Check out a fresh id page</p>
                     <Link href={`/incremental-static-regeneration/${crypto.randomUUID().split('-')[0]}`}>
                         <Button size={'sm'} colorScheme='blue'>
                             Go to New Page id
