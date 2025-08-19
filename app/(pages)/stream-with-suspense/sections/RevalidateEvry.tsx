@@ -29,8 +29,11 @@ export default async function RevalidateEvery({ revalidate, children, tags, para
             <h2>This section is being revalidated every <b>{revalidate}</b> minutes </h2>
             <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
             {params && <div className='flex flex-col gap-2'>
-                <p className='font-semibold'>With params={params}</p>
-               
+                <p className='font-semibold flex items-center'>
+                    <span className='mr-2'> Fetch from</span>
+                    <span className='text-gray-500'>api/time</span>?params={params}
+                </p>
+
             </div>}
 
 

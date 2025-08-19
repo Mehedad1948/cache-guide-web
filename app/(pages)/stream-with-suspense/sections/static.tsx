@@ -28,7 +28,11 @@ export default async function Static({ children, fetchTags, params }: {
             <ClientShwTime dataTime={time?.timestamp} />
             {children}
             <div>
-                {params && <p className='font-semibold'> With params={params}</p>}
+                {params &&
+                    <p className='font-semibold flex items-center '>
+                        <span className='mr-2'> Fetch from</span>
+                        <span className='text-gray-500'>api/time</span>?params={params}
+                    </p>}
             </div>
         </div>
     );
