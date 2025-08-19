@@ -1,12 +1,19 @@
 import ClientShwTime from '@/components/ClientShwoTime';
 import { ReactNode } from 'react';
 
-export default async function Static({ children, fetchTags }: { children?: ReactNode, fetchTags?: string[] }) {
+export default async function Static({ children, fetchTags, params }: {
+    children?: ReactNode,
+    fetchTags?: string[],
+    params?: string
+}) {
     let time
     try {
 
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/time`, {
-            next: { tags: fetchTags || ['static'] }
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/time${params ? `?params=${params}` : ''}`, {
+            cache: 'force-cache',
+            next: {
+                tags: fetchTags || ['static']
+            }
         });
 
         time = await res.json();
@@ -16,9 +23,13 @@ export default async function Static({ children, fetchTags }: { children?: React
 
     return (
         <div className='rounded-3xl flex flex-col gap-4 border p-6 bg-white'>
-            <h2>This section has a fetch with no validate time set</h2>
+            <h2>This section has a fetch with <b>force-cache</b> policy ( Nextjs 14 default )
+            </h2>
             <ClientShwTime dataTime={time?.timestamp} />
             {children}
+            <div>
+                {params && <p className='font-semibold'> With params={params}</p>}
+            </div>
         </div>
     );
 }

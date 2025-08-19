@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site";
 import ClientShwTime from '@/components/ClientShwoTime';
 import TimeShowWrapper from '@/components/TimeShowWrapper';
 import Footer from '@/components/ui/Footer';
+import { Providers } from './provider';
 
 export const metadata: Metadata = {
   title: {
@@ -44,17 +45,19 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <div className="relative flex flex-col h-screen">
-          <div className='grid container grid-cols-[300px_1fr] h-full mx-auto max-w-7xl pt-16 px-6'>
-            <div className=' w-full h-full'>
-              <Sidebar />
+        <Providers>
+          <div className="relative flex flex-col h-full min-h-dvh">
+            <div className='grid container grid-cols-[300px_1fr] h-full mx-auto max-w-7xl pt-16 px-6'>
+              <div className=' w-full h-full'>
+                <Sidebar />
+              </div>
+              <main className="bg-gradient-to-bl h-full w-full ">
+                {children}
+              </main>
             </div>
-            <main className="bg-gradient-to-bl h-full w-full ">
-              {children}
-            </main>
+            <Footer renderTime={renderTime} />
           </div>
-          <Footer renderTime={renderTime} />
-        </div>
+        </Providers>
       </body>
     </html>
   );
