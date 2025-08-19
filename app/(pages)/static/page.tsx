@@ -5,10 +5,11 @@ export default async function page() {
     let time
     try {
 
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/time`, {
-            // next: {
-            //     revalidate: 0
-            // }
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/time/static`, {
+
+            next: {
+                tags: ['tag-7']
+            }
         });
 
         time = await res.json();
