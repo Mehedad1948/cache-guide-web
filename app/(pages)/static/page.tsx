@@ -6,7 +6,7 @@ export default async function page() {
     try {
 
         const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/time/static`, {
-
+            cache: 'force-cache',
             next: {
                 tags: ['tag-7']
             }
