@@ -33,7 +33,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     This fetch is cached permanently and won't be fetched again even after passing the revalidate
                     time of route or changing id param of page URL because it's been cached by <b>force-cache</b> policy.
                 </p>
-                <Static cache='force-cache' />
+                <Static cache='force-cache' identifier='force-cache-in-incremental' />
             </NoteBox>
             <NoteBox>
                 <p className='mb-2'>
@@ -56,7 +56,7 @@ export default function Page({ params }: { params: { id: string } }) {
                         </li>
                     </ul>
                 </p>
-                <Static params={params.id} />
+                <Static params={params.id} identifier='default-in-incremental' />
             </NoteBox>
             <NoteBox>
                 <p className='mb-2'>

@@ -9,6 +9,7 @@ import {
     Button,
 } from '@chakra-ui/react'
 import NoteBox from '@/components/ui/NoteBox';
+import Link from 'next/link';
 
 export default async function page() {
     return (
@@ -30,10 +31,25 @@ export default async function page() {
             </NoteBox>
 
             <NoteBox>
-                <p className='mb-2'>
-                    This section won't revalidated by revalidating another fetch in this react tree, but revalidating full path with <b> revalidatePath() </b> will reset its cache.
+                <p>
+                    <strong>Key Takeaway: </strong>
+                    Revalidating a  fetch request no matter how
+                    will reset cache related to that endpoint on server . So in all other pages, fetches with
+                    <b> Similar URL </b>
+                    <span className='underline underline-offset-1'>and</span> <b> Similar Cache Policy </b>
+                    will get revalidated.
                 </p>
-                <Static fetchTags={['tag-3']} cache='force-cache' />
+            </NoteBox>
+
+            <NoteBox colorScheme='orange'>
+                <p className='mb-2'>
+                    This is a static section which also is being used in another page
+                    <Link href={'/static'} className='mx-1 hover:underline font-semibold'>
+                       Static Page
+                    </Link>
+                    to demonstrate the effect of revalidation of fetch request globally through the app.
+                </p>
+                <Static cache='force-cache' identifier='common-static-section' />
             </NoteBox>
 
             <Static fetchTags={['tag-4']} />
