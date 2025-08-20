@@ -19,6 +19,7 @@ export default async function page() {
                 <b className='ml-1'>revalidatePath</b> and see how each section updates differently in real
                 time.
             </NoteBox>
+            
             <NoteBox>
                 <div className='flex items-center gap-2'>
                     <p>
