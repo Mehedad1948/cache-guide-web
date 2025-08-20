@@ -2,16 +2,17 @@ import ClientShwTime from '@/components/ClientShwoTime';
 import { Badge } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-export default async function Static({ children, fetchTags, params, cache = 'default' }: {
+export default async function Static({ children, fetchTags, params, cache = 'default', identifier }: {
     children?: ReactNode,
     fetchTags?: string[],
     params?: string
     cache?: RequestCache
+    identifier?: string
 }) {
     let time
     try {
 
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/time${params ? `?params=${params}` : ''}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/time/${identifier || ''}${params ? `?params=${params}` : ''}`, {
             cache,
             next: {
                 tags: fetchTags || ['static']

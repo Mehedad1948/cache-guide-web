@@ -1,7 +1,16 @@
-export default function NoteBox({ children }: { children: React.ReactNode }) {
+import { Alert, AlertDescription, AlertProps, ComponentWithAs } from '@chakra-ui/react';
+import { ReactNode } from 'react';
+
+interface NoteBoxProps extends AlertProps {
+    children: ReactNode;
+}
+
+export default function NoteBox({ children, ...props }: NoteBoxProps) {
     return (
-        <div className='bg-cyan-50  p-4 text-cyan-700 rounded-xl border border-cyan-300 '>
-            {children}
-        </div>
+        <Alert {...props} className=' block  text-cyan-700 rounded-xl '>
+            <AlertDescription className='w-full'>
+                {children}
+            </AlertDescription>
+        </Alert>
     );
 }
