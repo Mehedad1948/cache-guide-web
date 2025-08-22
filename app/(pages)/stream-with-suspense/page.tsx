@@ -1,10 +1,9 @@
-import ClientShwTime from '@/components/ClientShwoTime';
 import { Suspense } from 'react';
-import Static from './sections/static';
 import RevalidateEvery from './sections/RevalidateEvry';
+import Static from './sections/static';
 
 
-export const revalidate = 60 * 30
+export const revalidate = 60 * 5
 
 export default async function page() {
 
@@ -21,7 +20,7 @@ export default async function page() {
                 revalidation of page as the minimum revalidation used in the page
             </div>
             <Suspense>
-                <RevalidateEvery revalidate={5} />
+                <RevalidateEvery revalidate={2} />
             </Suspense>
         </div>
     );

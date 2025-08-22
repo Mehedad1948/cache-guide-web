@@ -53,6 +53,17 @@ export default async function page() {
                 <Static cache='force-cache' identifier='common-static-section' />
             </NoteBox>
 
+            <NoteBox colorScheme='orange'>
+                <p className='mb-2'>
+                    This is a static section which also is being used in another page
+                    <Link href={'/static'} className='mx-1 hover:underline font-semibold'>
+                       Static Page
+                    </Link>
+                    to demonstrate the effect of revalidation of fetch request globally through the app.
+                </p>
+                <Static cache='default' identifier='common-default-section' />
+            </NoteBox>
+
             <Static fetchTags={['tag-4']} />
 
             <RevalidateEvery tags={['tag-6']} revalidate={5} />
