@@ -1,14 +1,18 @@
+import NoteBox from '@/components/ui/NoteBox';
 import RevalidateEvery from '../stream-with-suspense/sections/RevalidateEvry';
 import Static from '../stream-with-suspense/sections/static';
+import PageContainer from '@/components/ui/PageContainer';
 
 export default async function page() {
     return (
-        <div>
-            <h1 className='p-4 bg-cyan-50 flex flex-col gap-5 mb-4 font-semibold text-cyan-700 rounded-xl'>A Permanent Cached Section Wrapped in a Revalidation Component</h1>
+        <PageContainer>
+            <NoteBox variant={'left-accent'}>
+                A Permanent Cached Section Wrapped in a Revalidation Component
+            </NoteBox>
             <RevalidateEvery revalidate={1}>
                 <Static identifier='nested-default-cache' />
                 <Static identifier='nested-force-cache' cache='force-cache' />
             </RevalidateEvery>
-        </div>
+        </PageContainer>
     );
 }

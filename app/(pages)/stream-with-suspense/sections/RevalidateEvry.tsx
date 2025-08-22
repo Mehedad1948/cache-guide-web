@@ -16,7 +16,7 @@ export default async function RevalidateEvery({ revalidate, children, tags, para
 
         time = await res.json();
     } catch (error) {
-        console.log('🚀🚀', error);
+        console.error(error);
     }
 
     return (

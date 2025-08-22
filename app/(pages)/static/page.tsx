@@ -28,7 +28,7 @@ export default async function page() {
                 <p className='mb-2'>
                     This is a static section which also is being used in another page
                     <Link href={'/revalidate-on-demand'} className='mx-1 hover:underline font-semibold'>
-                        Static Page
+                       Revalidate on demand
                     </Link>
                     to demonstrate the effect of revalidation of fetch request globally through the app.
                 </p>
