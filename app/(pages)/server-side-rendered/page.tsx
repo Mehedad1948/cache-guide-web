@@ -5,14 +5,13 @@ import NoteBox from '@/components/ui/NoteBox';
 import Link from 'next/link';
 
 export default async function page() {
-    const userHeaders = headers()
+    const userHeaders = await headers()
 
     return (
         <PageContainer>
             <NoteBox variant={'left-accent'}>
                 This section is using Headers of user request so Nextjs will turn this page to a SSR page <br />
                 <b>
-
                     Your browser agent: <br /> {userHeaders.get('user-agent')}
                 </b>
             </NoteBox>
