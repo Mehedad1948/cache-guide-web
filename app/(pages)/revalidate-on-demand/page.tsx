@@ -64,11 +64,11 @@ export default async function page() {
                 <Static cache='default' identifier='common-default-section' />
             </NoteBox>
 
-            <Static fetchTags={['tag-4']} />
+            <Static identifier='on-demand-page' fetchTags={['tag-4']} />
 
-            <RevalidateEvery tags={['tag-6']} revalidate={5} />
+            <RevalidateEvery identifier='on-demand-page' tags={['tag-6']} revalidate={5} />
 
-            <RevalidateEvery revalidate={10} tags={['tag-1']}>
+            <RevalidateEvery identifier='on-demand-page' revalidate={10} tags={['tag-1']}>
                 <RevalidateButton
                     tag='tag-1'
                     colorScheme='blue'
