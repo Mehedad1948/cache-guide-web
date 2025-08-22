@@ -21,7 +21,7 @@ export default async function Static({ children, fetchTags, params, cache = 'def
 
         time = await res.json();
     } catch (error) {
-        console.log('🚀🚀', error);
+        console.error(error);
     }
 
     return (

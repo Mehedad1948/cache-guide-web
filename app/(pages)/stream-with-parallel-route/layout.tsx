@@ -8,7 +8,7 @@ export default function layout({ children, parallel }: { children: ReactNode, pa
             <Static />
             {children}
             <NoteBox >
-                <p className='text-cyan-700 mb-4 font-semibold'>Parallel Route</p>
+                <p className=' mb-4 font-semibold'>Parallel Route</p>
                 {parallel}
             </NoteBox>
         </div>
