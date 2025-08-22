@@ -9,7 +9,7 @@ export default async function page() {
 
     return (
         <PageContainer>
-            <NoteBox>
+            <NoteBox variant={'left-accent'}>
                 This section is using Headers of user request so Nextjs will turn this page to a SSR page <br />
                 <b>
 

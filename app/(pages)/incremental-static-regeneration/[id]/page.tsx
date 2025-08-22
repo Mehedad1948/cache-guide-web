@@ -13,12 +13,12 @@ export async function generateStaticParams() {
 export default function Page({ params }: { params: { id: string } }) {
     return (
         <div className='flex flex-col gap-6'>
-            <NoteBox>
+            <NoteBox variant={'left-accent'}>
                 This page with id "{params.id}" is cached and will revalidated every 10 minutes.
                 <br />
                 Using <b>generateStaticParams()</b> and <b>export const revalidate = 60 * 4;</b>
             </NoteBox>
-            <NoteBox >
+            <NoteBox variant={'left-accent'}>
                 <div className='flex items-center gap-4 flex-wrap'>
                     <p className=''>Check out a fresh id page</p>
                     <Link href={`/incremental-static-regeneration/${crypto.randomUUID().split('-')[0]}`}>
