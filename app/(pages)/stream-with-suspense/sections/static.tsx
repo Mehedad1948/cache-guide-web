@@ -36,10 +36,10 @@ export default async function Static({ children, fetchTags, params, cache = 'def
             <ClientShwTime dataTime={time?.timestamp} />
             {children}
             <div>
-                {params &&
+                {
                     <p className=' flex items-center '>
                         <span className='mr-2 text-gray-600 '> Fetch from</span>
-                        <span className='text-gray-600 '>api/time</span><span className='font-semibold'>?params={params}</span>
+                        <span className='text-gray-600 '>/api/time/{identifier || ''}{params ? <b>?params={params}</b> : ''}</span>
                     </p>
                 }
             </div>
