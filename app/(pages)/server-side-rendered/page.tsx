@@ -1,21 +1,22 @@
-import ClientShwTime from '@/components/ClientShwoTime';
+import PageContainer from '@/components/ui/PageContainer';
+import Static from '../stream-with-suspense/sections/static';
+import { headers } from 'next/headers';
+import NoteBox from '@/components/ui/NoteBox';
 
 export default async function page() {
-    let time
-    try {
-
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/time`, {
-            next: {
-                revalidate: 0
-            }
-        });
-
-        time = await res.json();
-    } catch (error) {
-        console.log('🚀🚀', error);
-    }
+    const userHeaders = headers()
 
     return (
-        <ClientShwTime dataTime={time?.timestamp} renderTime={new Date().getTime()} />
+        <PageContainer>
+            <NoteBox>
+                This section is using Headers request so it will be revalidated per request. <br />
+                <b>
+
+                Your browser agent: <br /> {userHeaders.get('user-agent')}
+                </b>
+            </NoteBox>
+            <Static identifier='ssr-page'  />
+            <Static cache='force-cache' identifier='ssr-page' />
+        </PageContainer>
     );
 }
