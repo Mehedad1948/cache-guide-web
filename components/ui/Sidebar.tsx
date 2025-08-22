@@ -27,6 +27,12 @@ export default function Sidebar() {
             <Link href="/revalidate-on-demand">
                 Revalidate on Demand
             </Link>
+            <Link href="/partial-prerendering/activated">
+                Activated Partial Prerendering
+            </Link>
+            <Link href="/partial-prerendering/not-activated">
+                Not Activated Partial Prerendering
+            </Link>
         </div>
     );
 }
