@@ -4,7 +4,7 @@ import Static from './sections/static';
 import NoteBox from '@/components/ui/NoteBox';
 
 
-export const revalidate = 60 * 5
+// export const revalidate = 60 * 5
 
 export default async function page() {
 

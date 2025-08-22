@@ -4,17 +4,18 @@ import RevalidateEvery from '../../stream-with-suspense/sections/RevalidateEvry'
 import { Button } from '@chakra-ui/react';
 import Link from 'next/link';
 
-export const revalidate = 60 * 4;
+// export const revalidate = 60 * 4;
 
 export async function generateStaticParams() {
     return [];
 }
 
-export default function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+    const id = (await params).id
     return (
         <div className='flex flex-col gap-6'>
             <NoteBox variant={'left-accent'}>
-                This page with id "{params.id}" is cached and will revalidated every 10 minutes.
+                This page with id "{id}" is cached and will revalidated every 10 minutes.
                 <br />
                 Using <b>generateStaticParams()</b> and <b>export const revalidate = 60 * 4;</b>
             </NoteBox>
@@ -56,7 +57,7 @@ export default function Page({ params }: { params: { id: string } }) {
                         </li>
                     </ul>
                 </p>
-                <Static params={params.id}  />
+                <Static params={id} />
             </NoteBox>
             <NoteBox>
                 <p className='mb-2'>
@@ -74,7 +75,7 @@ export default function Page({ params }: { params: { id: string } }) {
                         </li>
                     </ul>
                 </p>
-                <RevalidateEvery revalidate={2} params={params.id} />
+                <RevalidateEvery revalidate={2} params={id} />
             </NoteBox>
 
         </div >
