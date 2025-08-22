@@ -41,7 +41,7 @@ export default function Page({ params }: { params: { id: string } }) {
                     <br />
                     it <b>won't be revalidated</b> by changing route id.
                 </p>
-                <Static />
+                <Static identifier='default-in-incremental' />
             </NoteBox>
             <NoteBox>
                 <p className='mb-2'>
@@ -56,7 +56,7 @@ export default function Page({ params }: { params: { id: string } }) {
                         </li>
                     </ul>
                 </p>
-                <Static params={params.id} identifier='default-in-incremental' />
+                <Static params={params.id}  />
             </NoteBox>
             <NoteBox>
                 <p className='mb-2'>

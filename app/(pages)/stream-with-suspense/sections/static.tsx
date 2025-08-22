@@ -39,7 +39,7 @@ export default async function Static({ children, fetchTags, params, cache = 'def
                 {
                     <p className=' flex items-center '>
                         <span className='mr-2 text-gray-600 '> Fetch from</span>
-                        <span className='text-gray-600 '>/api/time/{identifier || ''}{params ? `?params=${params}` : ''}</span>
+                        <span className='text-gray-600 '>/api/time/{identifier || ''}{params ? <b>?params={params}</b> : ''}</span>
                     </p>
                 }
             </div>
