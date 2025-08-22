@@ -7,7 +7,7 @@ import { HStack, Spinner } from '@chakra-ui/react';
 export default function page() {
     return (
         <PageContainer>
-            <Static cache='force-cache' identifier='static-rendered' />
+            <Static cache='force-cache' identifier='not-partially-rendered' />
             <Suspense
                 fallback={
                     <HStack className='border rounded-3xl' h={32} w={'full'} justifyContent={'center'} alignItems={'center'}>

@@ -8,7 +8,7 @@ export const experimental_ppr = true
 export default function page() {
     return (
         <PageContainer>
-            <Static cache='force-cache' identifier='static-rendered' />
+            <Static identifier='partially-rendered' />
             <Suspense fallback={
                 <HStack className='border rounded-3xl' h={32} w={'full'} justifyContent={'center'} alignItems={'center'}>
                     <Spinner colorScheme='blue' />
