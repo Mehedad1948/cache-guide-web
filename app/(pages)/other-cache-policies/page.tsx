@@ -4,7 +4,7 @@ import Static from '../stream-with-suspense/sections/static';
 export default function page() {
     return (
         <PageContainer>
-            <Static cache='only-if-cached' identifier='other-policies' />
+            {/* <Static cache='only-if-cached' identifier='other-policies' /> */}
         </PageContainer>
     );
 }
