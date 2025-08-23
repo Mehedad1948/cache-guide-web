@@ -8,7 +8,10 @@ import { Suspense } from 'react';
 export default async function page() {
     return (
         <PageContainer className='!flex-col-reverse'>
-            <StaticProduct />
+            <Suspense fallback={<div className='h-64 w-full bg-gray-100 rounded-2xl'></div>}>
+
+                <StaticProduct />
+            </Suspense>
             <Suspense fallback={<RecommendedProductsSkeleton />}>
                 <Stream />
             </Suspense>
@@ -17,9 +20,9 @@ export default async function page() {
 }
 
 async function StaticProduct() {
-    const product = await fetch(
+    const product = await withDelay(fetch(
         `https://app-router-api.vercel.app/api/products?id=1`
-    ).then((res) => res.json());
+    ).then((res) => res.json()), 5000);
 
     return <div className="col-span-2  md:order-1 md:col-span-1">
         <h1 className='text-3xl mb-4'>{product.name}</h1>
